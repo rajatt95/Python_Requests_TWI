@@ -21,6 +21,6 @@ url = "https://reqres.in/api/users?page=2"
 # Send GET Request
 response = requests.get(url)
 
-# Print the Response content
-print(response.content)
+# Print the Response encoding
+print(response.encoding)  # utf-8
 

@@ -13,14 +13,30 @@
 
 # HTTP method GET call using requests package
 
-# URL
 import requests
+import json
+import jsonpath
 
+# URL
 url = "https://reqres.in/api/users?page=2"
 
 # Send GET Request
 response = requests.get(url)
 
-# Print the Response content
-print(response.content)
+# Parse Reponse into JSON format
+response_json = json.loads(response.text)
+print(response_json)
+
+print("================================")
+
+# Using JSONPath to reach specific point
+print(jsonpath.jsonpath(response_json, 'per_page'))
+print(jsonpath.jsonpath(response_json, 'total_pages'))
+
+
+
+
+
+
+
 

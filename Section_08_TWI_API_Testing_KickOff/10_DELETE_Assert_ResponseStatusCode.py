@@ -11,16 +11,19 @@
 #
 # /***************************************************/
 
-# HTTP method GET call using requests package
+# HTTP method DELETE call using requests package
 
-# URL
 import requests
 
-url = "https://reqres.in/api/users?page=2"
+# URL
+url = "https://reqres.in/api/users/2"
 
-# Send GET Request
-response = requests.get(url)
+# Send DELETE Request
+response = requests.delete(url)
 
-# Print the Response content
-print(response.content)
+# Print the Response Status Code
+print(response.status_code) # 204
+
+# Assertion for Response Status Code
+assert response.status_code == 204
 

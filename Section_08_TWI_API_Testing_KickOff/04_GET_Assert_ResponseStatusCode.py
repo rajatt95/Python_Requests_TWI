@@ -21,6 +21,9 @@ url = "https://reqres.in/api/users?page=2"
 # Send GET Request
 response = requests.get(url)
 
-# Print the Response content
-print(response.content)
+# Print the Response Status Code
+print(response.status_code) # 200
+
+# Assertion for Response Status Code
+assert response.status_code == 200
 
