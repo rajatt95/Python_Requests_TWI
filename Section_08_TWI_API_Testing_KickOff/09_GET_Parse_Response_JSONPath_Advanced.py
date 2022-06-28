@@ -23,7 +23,7 @@ url = "https://reqres.in/api/users?page=2"
 # Send GET Request
 response = requests.get(url)
 
-# Parse Reponse into JSON format
+# Parse Response into JSON format
 response_json = json.loads(response.text)
 print(response_json)
 

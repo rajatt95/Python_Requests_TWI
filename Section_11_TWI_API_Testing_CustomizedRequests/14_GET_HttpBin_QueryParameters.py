@@ -11,32 +11,20 @@
 #
 # /***************************************************/
 
-# HTTP method GET call using requests package
+# HTTP method GET call (with Query Parameters) using requests package
 
 import requests
-import json
-import jsonpath
 
 # URL
-url = "https://reqres.in/api/users?page=2"
+url = "https://httpbin.org/get"
 
-# Send GET Request
-response = requests.get(url)
+# Custom Parameters
+queryParams = {'name': 'Rajat Verma', 'profile-github': 'https://github.com/rajatt95'}
 
-# Parse Response into JSON format
-response_json = json.loads(response.text)
-print(response_json)
+# Send GET Request with Query parameters
+response = requests.get(url, params=queryParams)
 
-print("================================")
-
-# Using JSONPath to reach specific point
-print(jsonpath.jsonpath(response_json, 'per_page'))
-print(jsonpath.jsonpath(response_json, 'total_pages'))
-
-
-
-
-
-
-
+print('##################################################')
+# Print the Response Text
+print(response.text)
 
