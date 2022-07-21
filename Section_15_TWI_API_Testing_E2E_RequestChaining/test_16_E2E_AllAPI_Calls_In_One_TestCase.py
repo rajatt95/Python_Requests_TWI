@@ -52,7 +52,7 @@ def test_E2E_01_add_student_02_add_TechnicalSkills_03_Get_FinalDetails():
     student_ID = jsonpath.jsonpath(response_POST_Add_Student.json(), 'id')
     print("student_ID[0] in String")
     print(student_ID[0])  # This is returning the value in String
-    print("student_ID[0] in Integer")
+    print("int(student_ID[0]) in Integer")
     print(int(student_ID[0]))  # This is returning the value in integer
 
     # ===============>>>>>>>>>>>>>>>>> 2. ADD TECHNICAL SKILLS
