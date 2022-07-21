@@ -21,7 +21,6 @@ base_url = "https://thetestingworldapi.com/"
 
 
 def test_01_POST_add_student():
-
     global student_ID_String_ToBeUsed_In_OtherRequests
 
     # Send POST Request with Request body
@@ -42,10 +41,10 @@ def test_01_POST_add_student():
 
     student_ID_String_ToBeUsed_In_OtherRequests = str(student_ID[0])
 
-# Student ID - Fetched from previous API call ->
-    # Will be used here in GET request (As Path Parameter)
-def test_02_GET_student_FinalDetails():
 
+# Student ID - Fetched from previous API call ->
+# Will be used here in GET request (As Path Parameter)
+def test_02_GET_student_FinalDetails():
     response = requests.get(base_url + "api/studentsDetails/" + student_ID_String_ToBeUsed_In_OtherRequests)
 
     print(
@@ -55,5 +54,3 @@ def test_02_GET_student_FinalDetails():
     assert response.status_code == 200, "Assertion for Response Status Code"
     # Assertion for Student ID
     assert response.json()['data']['id'] == int(student_ID_String_ToBeUsed_In_OtherRequests)
-
-
