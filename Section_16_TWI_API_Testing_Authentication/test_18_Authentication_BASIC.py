@@ -15,10 +15,6 @@
 import requests
 from requests.auth import HTTPBasicAuth
 
-# URL
-base_url = "https://thetestingworldapi.com/"
-
-
 def test_Validate_ResponseMessage_Without_Authentication():
     response = requests.get("https://api.github.com/user")
     print(response.text)
